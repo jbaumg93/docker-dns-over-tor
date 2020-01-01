@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dns:
+    build: .
+    image: jbaumg/dns-over-tor
+    restart: always
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    security_opt:
+      - no-new-privileges
